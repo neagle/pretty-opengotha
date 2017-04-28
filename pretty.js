@@ -16,7 +16,7 @@ $('table tr:not(:first-child)').each((i, row) => {
 	table.white = $row.find('td:nth-child(2)').text().trim()
 	table.black = $row.find('td:nth-child(3)').text().trim()
 	table.handicap = $row.find('td:nth-child(4)').text().trim()
-	table.result = $row.find('td:nth-child(5)').text().trim()
+	// table.result = $row.find('td:nth-child(5)').text().trim()
 	data.tables.push(table)
 })
 
@@ -38,14 +38,14 @@ body {
 	padding: 0;
 }
 .ngc-logo {
-	left: 2.5%;
+	left: 1%;
 	width: 10%;
 	position: absolute;
 	top: 0;
 }
 
 .tables {
-	margin-left: 15%;
+	margin-left: 12%;
 	display: flex;
 	flex-flow: column wrap;
 	flex-direction: column;
@@ -55,7 +55,7 @@ body {
 .table {
 	width: 50%;
 	display: flex;
-	height: 50px;
+	height: 40px;
 }
 
 .table:nth-child(even) {
@@ -71,13 +71,13 @@ body {
 	width: 10%;
 	text-align: center;
 	font-family: Exo;
-	font-size: 24px;
+	font-size: 18px;
 	line-height: 1;
 }
 
 .white, .black {
 	width: 35%;
-	font-size: 12px;
+	font-size: 10px;
 }
 
 .white {
@@ -94,8 +94,9 @@ body {
 
 .handicap:after {
 	color: #999;
-	content: ' stones';
+	content: 'stones';
 	font-size: 10px;
+	margin-left: 0.5em;
 }
 
 .result {
@@ -116,7 +117,6 @@ data.tables.forEach((table, i) => {
 		<div class="white">${table.white}</div>
 		<div class="black">${table.black}</div>
 		<div class="handicap">${table.handicap}</div>
-		<div class="result">${table.result}</div>
 	</div>
 	`
 })
