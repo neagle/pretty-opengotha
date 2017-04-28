@@ -2,7 +2,6 @@ const fs = require('fs')
 const argv = require('yargs').argv
 const cheerio = require('cheerio')
 
-console.log('hello world', argv.file)
 const html = fs.readFileSync(argv.file, 'utf8')
 const $ = cheerio.load(html)
 const data = {};
@@ -89,6 +88,10 @@ body {
 	color: #ccc;
 }
 
+.handicap {
+	font-family: Exo;
+}
+
 .handicap:after {
 	color: #999;
 	content: ' stones';
@@ -98,6 +101,7 @@ body {
 .result {
 	color: #999;
 	width: 10%;
+	font-family: Exo;
 }
 </style>
 <body>
@@ -124,5 +128,6 @@ newFile += `
 `
 
 fs.writeFileSync(argv.output, newFile)
+console.log(`Writing output to ${argv.output}.`)
 
 // console.log('data', data);
